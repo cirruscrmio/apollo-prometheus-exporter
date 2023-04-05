@@ -1,6 +1,6 @@
 {
-  "name": "@bmatei/apollo-prometheus-exporter",
-  "version": "0.0.0-development",
+  "name": "@cirruscrmio/apollo-prometheus-exporter",
+  "version": "2.1.0",
   "description": "Plugin for Apollo Server to export metrics in Prometheus format",
   "keywords": [
     "apollo",
@@ -12,8 +12,11 @@
   "author": "Bogdan Matei <bogdan@matei.dev>",
   "license": "MIT",
   "main": "index.js",
-  "homepage": "https://github.com/bfmatei/apollo-prometheus-exporter#readme",
-  "repository": "github:bfmatei/apollo-prometheus-exporter",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "homepage": "https://github.com/cirruscrmio/apollo-prometheus-exporter#readme",
+  "repository": "github:cirruscrmio/apollo-prometheus-exporter",
   "peerDependencies": {
     "prom-client": "^12.0.0 || ^13.0.0 || ^14.0.0"
   }

@@ -12,9 +12,7 @@
   "author": "Bogdan Matei <bogdan@matei.dev>",
   "license": "MIT",
   "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "private": true,
   "homepage": "https://github.com/cirruscrmio/apollo-prometheus-exporter#readme",
   "repository": "github:cirruscrmio/apollo-prometheus-exporter",
   "scripts": {
