@@ -10,7 +10,13 @@ import {
   GraphQLFieldResolverParams
 } from '@apollo/server';
 import { Express } from 'express';
-import { DefaultMetricsCollectorConfiguration, LabelValues, register, Registry } from 'prom-client';
+import {
+  DefaultMetricsCollectorConfiguration,
+  LabelValues,
+  register,
+  Registry,
+  RegistryContentType
+} from 'prom-client';
 
 import {
   FieldLabels,
@@ -55,11 +61,16 @@ export interface SkipMetricsMap<C extends BaseContext = AppContext, S = Source, 
   >;
 }
 
-export interface Context<C extends BaseContext = AppContext, S = Source, A = Args> {
+export interface Context<
+  C extends BaseContext = AppContext,
+  S = Source,
+  A = Args,
+  R extends RegistryContentType = RegistryContentType
+> {
   app: Express;
   defaultLabels: LabelValues<string>;
   defaultMetrics: boolean;
-  defaultMetricsOptions: DefaultMetricsCollectorConfiguration;
+  defaultMetricsOptions: DefaultMetricsCollectorConfiguration<R>;
   disabledMetrics: MetricsNames[];
   durationHistogramsBuckets: number[];
   hostnameLabel: boolean;
